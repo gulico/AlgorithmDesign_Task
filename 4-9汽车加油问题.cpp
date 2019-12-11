@@ -1,3 +1,8 @@
+/**
+ * 4-9汽车加油问题
+ * 思路：当前累计距离不超过n，则继续；否则，加油，即累计距离清零，加油次数+1
+ * 不能到达终点的情况：单个距离超过n
+ **/
 #include<iostream>
 #include<algorithm>
 #include<fstream>
