@@ -32,16 +32,18 @@ void FindMax()//动态规划
     }
 }
 
+
+
 void FindWhat(int i,int j)//寻找解的组成方式
 {
     if(i>=0)
     {
-        if(dp[i][j]==dp[i-1][j])//相等说明没装
+        if(dp[i][j]==dp[i-1][j])//与上一个物品在该容量下的价值相等说明没装
         {
             item[i]=0;//全局变量，标记未被选中
             FindWhat(i-1,j);
         }
-        else if( j-w[i]>=0 && dp[i][j]==dp[i-1][j-w[i]]+v[i] )
+        else if( j-w[i]>=0 && dp[i][j]==dp[i-1][j-w[i]]+v[i] )//j-w[i]>=0装得下，且dp[i][j]==dp[i-1][j-w[i]]+v[i]装了
         {
             item[i]=1;//标记已被选中
             FindWhat(i-1,j-w[i]);//回到装包之前的位置

@@ -19,7 +19,12 @@ int main(){
         for(k = 0; k < n; k++){//遍历物品
             for(i = 1;i < c; i++){//容量
                 for(j = 1; j < d; j++){//容积
-                    dp[i][j] = max(dp[i][j],dp[i-w[k]][j-b[k]]+v[k]);
+                    if(i<w[k]||j<v[k]){//装不下
+                        dp[i][j] = dp[i][j];
+                    }else{//装得下
+                        dp[i][j] = max(c,dp[i-w[k]][j-b[k]]+v[k]);
+                    }
+                    
                 }
             }
         }
