@@ -47,8 +47,8 @@ void backtrack2(int t){
         for (int i = t; i <= n; i++) {
             swap(x[t], x[i]);//交换元素顺序，递归
             //if(constraint(t) && bount(t))
-            //    backtrack(t+1);//换回来
-            swap(x[t], x[i]);
+            //    backtrack(t+1);
+            swap(x[t], x[i]);//换回来
         }
       }
         
